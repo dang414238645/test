@@ -2,7 +2,7 @@ package test.thread.interrupt;
 /**
  * 线程的interrupt()方法不是中段线程
  * 只是给线程标识一个中段的状态，如果我们需要中段线程，可以捕获这种状态通过抛出异常的方式实现中短
- * sleep wait join 内部实现也是在不断的轮训这种状态来实现的，所以他会自动抛出异常
+ * sleep wait join 内部实现也是在不断的轮训这种状态来实现的，所以他会自动抛出异常，不同的是他们抛出异常后，线程就变为非中段状态
  * @author changpengfei
  *
  */
