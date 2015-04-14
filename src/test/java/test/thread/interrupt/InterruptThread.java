@@ -12,10 +12,21 @@ public class InterruptThread extends Thread {
 					throw new InterruptedException("interrupted()--");
 				}
 			}
-		} catch (Exception e) {
+		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		try {
+			while(true){
+				//当wait sleep join 一抛出InterruptedException后，线程就不是中段状态啦
+				Thread.sleep(1);
+			}
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		
 		while(true){
 			//isInterrupted()执行后对线程状态不改变

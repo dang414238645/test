@@ -19,6 +19,10 @@ public class Main {
 		System.out.println(t.isInterrupted());
 		t.interrupt();
 		System.out.println(t.isInterrupted());
+		
+		Thread.sleep(1000);
+		t.interrupt();
+		System.out.println(t.isInterrupted());
 	}
 
 }

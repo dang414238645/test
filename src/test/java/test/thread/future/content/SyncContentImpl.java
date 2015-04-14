@@ -9,11 +9,9 @@ public class SyncContentImpl implements Content {
 	private byte[] contentbytes;
 	
 	public SyncContentImpl(final String urlstr) {
-		System.out.println(Thread.currentThread().getName()+" Getting "+urlstr);
-		
-		
 		new Thread(){
 			public void run(){
+				System.out.println(Thread.currentThread().getName()+" Getting "+urlstr);
 				try {
 					URL url=new URL(urlstr);
 					DataInputStream in=new DataInputStream(url.openStream());
