@@ -13,9 +13,17 @@ public class WorkerThread extends Thread {
 
 	@Override
 	public void run() {
-		while(true){
-			Request request=channel.takeRequest();
-			request.execute();
+		try {
+			while(true){
+				if(Thread.interrupted()){
+						throw new InterruptedException();
+				}
+				Request request=channel.takeRequest();
+				request.execute();
+			}
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 

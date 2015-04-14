@@ -25,14 +25,15 @@ public class Channel {
 		}
 	}
 	
-	public synchronized void putRequest(Request request){
+	public void stopAllWorkers(){
+		for(int i=0;i<threadPool.length;i++){
+			threadPool[i].interrupt();
+		}
+	}
+	
+	public synchronized void putRequest(Request request) throws InterruptedException{
 		while(count>requestQueue.length){
-			try {
-				wait();
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			wait();
 		}
 		requestQueue[tail]=request;
 		tail=(tail+1)%requestQueue.length;
@@ -40,14 +41,9 @@ public class Channel {
 		notifyAll();
 	}
 	
-	public synchronized Request takeRequest(){
+	public synchronized Request takeRequest() throws InterruptedException{
 		while(count<=0){
-			try {
-				wait();
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			wait();
 		}
 		
 		Request request=requestQueue[head];

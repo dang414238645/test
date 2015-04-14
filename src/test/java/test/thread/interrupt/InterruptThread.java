@@ -8,6 +8,7 @@ public class InterruptThread extends Thread {
 			while(true){
 				//interrupted()方法执行后当前线程变为非中段状态
 				if(Thread.interrupted()){
+//					Thread.sleep(1000);
 					throw new InterruptedException("interrupted()--");
 				}
 			}

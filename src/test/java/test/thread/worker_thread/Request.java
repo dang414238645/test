@@ -14,14 +14,9 @@ public class Request {
 		this.number = number;
 	}
 	
-	public void execute(){
+	public void execute() throws InterruptedException{
 		System.out.println(Thread.currentThread().getName()+" executes "+this);
-		try {
-			Thread.sleep(random.nextInt(1000));
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		Thread.sleep(random.nextInt(1000));
 	}
 	
 	@Override

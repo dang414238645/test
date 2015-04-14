@@ -11,11 +11,18 @@ public class ClientThread extends Thread {
 		super(name);
 		this.channel = channel;
 	}
+	
+	public void stopThread(){
+		this.interrupt();
+	}
 
 	@Override
 	public void run() {
 			try {
 				for(int i=0;true;i++){
+					if(Thread.interrupted()){
+						throw new InterruptedException();
+					}
 					Request request=new Request(getName(),i);
 					channel.putRequest(request);
 					Thread.sleep(random.nextInt(1000));
