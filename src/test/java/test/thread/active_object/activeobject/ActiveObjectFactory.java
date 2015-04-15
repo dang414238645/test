@@ -9,7 +9,6 @@ public class ActiveObjectFactory {
 		Proxy proxy=new Proxy(scheduler, servant);
 		scheduler.start();
 		return proxy;
-		
 	}
 
 }

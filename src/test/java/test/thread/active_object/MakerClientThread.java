@@ -19,6 +19,7 @@ public class MakerClientThread extends Thread {
 					Result result=activeObject.makeString(i, fillchar);
 					Thread.sleep(10);
 					String value=(String)result.getResultValue();
+					System.out.println(Thread.currentThread().getName()+":value="+value);
 				}
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
