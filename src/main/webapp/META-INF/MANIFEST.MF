@@ -1,3 +1,8 @@
 Manifest-Version: 1.0
-Class-Path: 
+Ant-Version: Apache Ant 1.9.3
+Created-By: changpengfei
+Built-Date: 2015-04-15 17:27:31
+Implementation-Title: test
+Implementation-Version: 1.0
+Implementation-Vendor: changpengfei
 
