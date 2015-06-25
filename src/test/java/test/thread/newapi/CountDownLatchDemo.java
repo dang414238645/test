@@ -22,6 +22,13 @@ class TaskPortion implements Runnable{
 
 	@Override
 	public void run() {
+		try {
+			Thread.sleep(10000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		latch.countDown();
 		
 	}
 	
@@ -66,7 +73,7 @@ class WaitingTask implements Runnable{
 
 
 public class CountDownLatchDemo {
-	static final int SIZE=100;
+	static final int SIZE=10;
 	public static void main(String args[]){
 		ExecutorService exec=Executors.newCachedThreadPool();
 		CountDownLatch latch=new CountDownLatch(SIZE);
