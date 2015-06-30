@@ -23,7 +23,7 @@ public class Main {
 		}
 		System.out.println("a");
 		
-		System.out.println(new Integer(1).toString());
+		System.out.println("\u57CE\u5E02\u4FBF\u6377\u9152\u5E97(\u5317\u6D41\u6C7D\u8F66\u603B\u7AD9\u5E97)");
 		
 	}
 
