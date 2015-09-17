@@ -27,6 +27,8 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.junit.Test;
 
+import test.ctrip.frame.utils.ExecutorUtils;
+
 
 
 public class HttpClientTest {

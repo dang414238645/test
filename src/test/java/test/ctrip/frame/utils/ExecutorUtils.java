@@ -1,4 +1,4 @@
-package test.ctrip.frame.httpclient;
+package test.ctrip.frame.utils;
 
 
 import java.io.ByteArrayInputStream;
