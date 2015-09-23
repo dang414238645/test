@@ -47,6 +47,7 @@ class Task2 implements Runnable{
 public class NotifyVsNotifyAll {
 
 	public static void main(String[] args) throws InterruptedException {
+		System.out.println(System.getProperty("file.encoding"));
 		ExecutorService exec=Executors.newCachedThreadPool();
 		for(int i=0;i<5;i++){
 			exec.execute(new Task());
